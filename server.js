@@ -18,7 +18,8 @@ app.get("/roll/:number", (req, res) => {
     if(isNaN(num)) {
         return res.status(400).send("You must specify a number.");
     }
-    res.send(`you rolled a ${req.params.number}`);
+    const roll = Math.floor(Math.random() * (num + 1));
+    res.send(`you rolled a ${roll}`);
 });
 
 // ==========================  Exercise 3. I Want THAT One!  =============================
